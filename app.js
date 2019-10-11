@@ -13,13 +13,13 @@ var sums;
 function sum(a, b) { //eslint-disable-line
     var c = a + b;
     sums = c;
-    var resultString = 'The sum of ' + a + ' and  ' + b + ' is ' + c;
-    return [a + b, resultString];
+    var resultString = 'The sum of ' +a+' and '+b+' is '+c+'.';
+    return [sums, resultString];
 }
 
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -36,13 +36,13 @@ var multiplys;
 function multiply(a, b) { //eslint-disable-line
     var c = a * b;
     multiplys = c;
-    var resultString = 'The product of ' + a + 'and ' + b + 'is ' + c;
+    var resultString = 'The product of '+a+' and '+b+' is '+c+'.';
     //console.log(e , resultString);
-    return [a * b, resultString];
+    return [multiplys, resultString];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -62,17 +62,17 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) {
     //eslint-disable-line
     var sum1 = sum(a, b);
-    var sum2 = sum(sums, c);
-    var resultString1 = (a + ' and ' + b + 'and ' + c + 'sum to ' + sum2);
+    var sumResult = sums + c;
+    var resultString1 =a+' and '+b+' and '+c+' sum to '+ sumResult+'.';
 var multiply1=multiply(a, b);
-var multiply2=multiply(multiplys,c);
-var resultString2 = ('the product of '+ a +' and '+ b +' and '+ c + ' is '+multiply2 );
-    return [resultString1 , resultString2];
+var multiplyResult=multiplys * c;
+var resultString2 = 'The product of '+a+' and '+b+' and '+c+' is '+multiplyResult+'.';
+    return [ sumResult,multiplyResult,resultString1,resultString2];
 }
 
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
- //testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -90,12 +90,15 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+var arraySum= sum(testArray[0],testArray[1]);
+var arraySumResult=sums+testArray[2];
+var arrayString = '2,3,4 was passed in as an array of numbers, and '+arraySumResult+' is their sum.';
+return [arraySumResult ,arrayString ] ;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
